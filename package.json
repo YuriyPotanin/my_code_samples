@@ -1,0 +1,31 @@
+{
+  "name": "App",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/app"
+  },
+  "author": "Yuriy Potanin",
+  "description": "App",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "angular-uuid": "0.0.2",
+    "bluebird": "^3.0.6",
+    "body-parser": "latest",
+    "elasticsearch": "^9.0.0",
+    "elasticsearchclient": "^0.5.3",
+    "es": "^0.4.8",
+    "express": "latest",
+    "firebase": "latest",
+    "mandrill-api": "~1.0.45",
+    "nodemailer": "^1.10.0",
+    "nodemailer-mandrill-transport": "^1.0.0",
+    "node-uuid": "~1.4.7",
+    "request": "~2.67.0",
+    "async": "~1.5.0",
+    "q": "latest"
+  },
+  "license": "MIT"
+}

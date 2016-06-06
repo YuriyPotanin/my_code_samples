@@ -1,0 +1,301 @@
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-sm-12 ">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h1> Payment ID : {{payment.id}} </h1>
+                        <span class="tools pull-right">
+							<button ng-click="back()" type="submit" class="btn btn-success pull-right">back</button>
+						</span>
+                    </header>
+                    <div class="panel-body ">
+                        <div calss="row">
+                            <aside class="col-md-12">
+                                <div class="row">
+                                    <div class="bio-graph-heading">
+                                        <h1>General information</h1>
+                                    </div>
+                                </div>
+                                <div class="panel-body bio-graph-info">
+                                    <div class="row">
+                                        <div class=" col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Amount</label>
+                                                    <input type="text" class="form-control" ng-model="payment.amount">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Amount refunded</label>
+                                                    <input type="text" class="form-control" ng-model="payment.amount_refunded">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Balance transaction</label>
+                                                    <input type="text" class="form-control" ng-model="payment.balance_transaction">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Captured</label>
+                                                    <input type="checkbox" class="pull-right" ng-model="payment.captured">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Paid</label>
+                                                    <input type="checkbox" class="pull-right" ng-model="payment.paid">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Livemode</label>
+                                                    <input type="checkbox" class="pull-right" ng-model="payment.livemode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class='col-sm-12'>
+                                                <div class="form-group">
+                                                    <label>Status</label>
+                                                    <input class="form-control " name="status" ng-model="payment.status">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Created</label>
+                                                    <input type="text" class="form-control" ng-model="payment.created">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Object</label>
+                                                    <input type="text" class="form-control" ng-model="payment.object">
+                                                </div>
+                                            </div>
+                                            <div class='col-sm-12'>
+                                                <div class="form-group">
+                                                    <label>Status</label>
+                                                    <input type="text" class="form-control" ng-model="payment.status">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end  Task overview -->
+                                <div class="row">
+                                    <div class="bio-graph-heading">
+                                        <h1>Card information</h1>
+                                    </div>
+                                </div>
+                                <div class="panel-body bio-graph-info">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Country</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.country">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Brand</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.brand">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>cvc check</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.cvc_check">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>exp month</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.exp_month">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>exp_year</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.exp_year">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Fingerprint</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.fingerprint">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Funding</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.funding">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Id</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.id">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Last</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.last4">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Object</label>
+                                                    <input type="text" class="form-control" ng-model="payment.card.object">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end  Task overview -->
+                                <div class="row">
+                                    <div class="bio-graph-heading">
+                                        <h1>Refunds information</h1>
+                                    </div>
+                                </div>
+                                <div class="panel-body bio-graph-info">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Has more</label>
+                                                    <input type="text" class="form-control" ng-model="payment.refunds.has_more">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Object</label>
+                                                    <input type="text" class="form-control" ng-model="payment.refunds.object">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Total count</label>
+                                                    <input type="text" class="form-control" ng-model="payment.refunds.total_count">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>url</label>
+                                                    <input type="text" class="form-control" ng-model="payment.refunds.url">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="bio-graph-heading">
+                                        <h1>Source information</h1>
+                                    </div>
+                                </div>
+                                <div class="panel-body bio-graph-info">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Country</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.country">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Brand</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.brand">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>cvc check</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.cvc_check">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>exp month</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.exp_month">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>exp_year</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.exp_year">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Fingerprint</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.fingerprint">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Funding</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.funding">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Id</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.id">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Last</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.last4">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Object</label>
+                                                    <input type="text" class="form-control" ng-model="payment.source.object">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                </section>
+                </aside>
+                </div>
+                </div>
+    </section>
+    </div>
+    </div>
+</section>
+</section>
+<script class="include" type="text/javascript" src="theme_js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="theme_js/jquery.scrollTo.min.js"></script>
+<script src="theme_js/jquery.nicescroll.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript" src="theme_assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="theme_assets/data-tables/DT_bootstrap.js"></script>
+<script src="theme_js/respond.min.js"></script>
+<script src="theme_js/slidebars.min.js"></script>
+

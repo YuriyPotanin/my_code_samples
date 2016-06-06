@@ -1,0 +1,27 @@
+{
+  "name": "App",
+  "version": "0.0.1",
+  "homepage": "https://bitbucket.org/app",
+  "authors": [
+    "Yuriy Potanin"
+  ],
+  "description": "App",
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-cookies": "latest",
+    "angular-md5": "latest",
+    "angular-route": "latest",
+    "angular-resource": "latest",
+    "angular-strap": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest",
+    "ng-uuid": "~0.1.1",
+    "highcharts-ng": "latest",
+    "highcharts": "highcharts-release#~4.1.9",
+    "highstock": "highstock-release#~2.1.9"
+  }
+}

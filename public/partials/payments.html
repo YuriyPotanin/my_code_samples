@@ -1,0 +1,136 @@
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        payments Table
+                        <span class="tools pull-right">
+              <a href="javascript:;" class="fa fa-chevron-down"></a>
+              <a href="javascript:;" class="fa fa-times"></a>
+            </span>
+                    </header>
+                    <div class="panel-body">
+                        <div class="adv-table">
+                            <div class="span6">
+                                <div id="dynamic-table_length" class="dataTables_length">
+                                    <label>
+                                        <select class="form-control" size="1" name="dynamic-table_length" aria-controls="dynamic-table" ng-model="itemsPerPage" ng-change="changeArr()">
+                                            <option value="10" ng-selected="true">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> records per page</label>
+                                </div>
+                                <div class="dataTables_filter" id="dynamic-table_filter">
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <label>Search:
+                                                <input type="text" class="form-control" aria-controls="dynamic-table" ng-model="searchItem" ng-change="searchAll()">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-overflow">
+                                <table class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="thWidth" ng-click="sortAllItems('amount')">Amount
+                                                <span ng-class="returnClassSort('amount')"></span></th>
+                                            <th class="thWidth" ng-click="sortAllItems('currency')">Currency
+                                                <span ng-class="returnClassSort('currency')"></span></th>
+                                            <th class="thWidth" ng-click="sortAllItems('object')">Object
+                                                <span ng-class="returnClassSort('object')"></span></th>
+                                            <th class="thWidth" ng-click="sortAllItems('refunded')">Is refunded?
+                                                <span ng-class="returnClassSort('refunded')"></span></th>
+                                            <th class="thWidth" ng-click="sortAllItems('status')">Status
+                                                <span ng-class="returnClassSort('status')"></span></th>
+                                            <th class="thWidth" ng-click="sortAllItems('amount_refunded')">Amount refunded
+                                                <span ng-class="returnClassSort('amount_refunded')"></span></th>
+                                            <th class="thWidth" ng-click="sortAllItems('paid')">Paid
+                                                <span ng-class="returnClassSort('paid')"></span></th>
+                                            <th>View detals</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX" ng-repeat="payment in viewOnPage">
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.amount}}</span>
+                                                <br ng-if="!payment.isEdit">
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.currency}}</span>
+                                                <br ng-if="!payment.isEdit">
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.object}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.refunded}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.status}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.amount_refunded}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-if="!payment.isEdit">{{payment.paid}}</span>
+                                                <br ng-if="!payment.isEdit">
+                                            </td>
+                          <button ng-if ="!payment.isEdit" ng-click="edittFild($index)" type="submit" class="btn btn-xs btn-warning">Edit</button>
+                          <button ng-if ="payment.isEdit" ng-click="submitFild(payment, $index)" type="submit" class="btn btn-xs btn-success">Submit</button>
+                        </td> -->
+                          <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                        </td> -->
+                                            <td>
+                                                <button type="submit" class="btn btn-xs btn btn-success" ng-click="viewDetals(payment.fbId)">View detals</button>
+                                            </td>
+                          <input type="checkbox" ng-model= "payment.isChecked">
+                        </td> -->
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Amount</th>
+                                            <th>Currency</th>
+                                            <th>Object</th>
+                                            <th>refunded</th>
+                                            <th>Status</th>
+                                            <th>Object</th>
+                                            <th>Brand</th>
+                                            <th>View detals</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="span6">
+                                <div class="dataTables_paginate paging_bootstrap pagination">
+                                    <ul>
+                                        <li class="prev disabled" ng-click="prevPage()">
+                                            <a href="">← Previous</a>
+                                        </li>
+                                        <li ng-repeat="page in pages track by $index" ng-click="changeArr($index)" ng-class="{active: $index == selectedPage}">
+                                            <a href="">{{page}}</a>
+                                        </li>
+                                        <li class="next disabled" ng-click="nextPage()">
+                                            <a href="">Next → </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+<script class="include" type="text/javascript" src="theme_js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="theme_js/jquery.scrollTo.min.js"></script>
+<script src="theme_js/jquery.nicescroll.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript" src="theme_assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="theme_assets/data-tables/DT_bootstrap.js"></script>
+<script src="theme_js/respond.min.js"></script>
+<script src="theme_js/slidebars.min.js"></script>

@@ -1,0 +1,33 @@
+<div class="dropdown-menu datepicker" ng-class="'datepicker-mode-' + $mode" style="max-width: 320px;">
+<table class=" table-condensed">
+  <thead>
+    <tr class="text-center">
+      <th>
+        <div tabindex="-1" class="hov" ng-click="$selectPane(-1)">
+          <i class="{{$iconLeft}}"></i>
+        </div>
+      </th>
+      <th colspan="{{ rows[0].length - 2 }}">
+        <div tabindex="-1" class="hov text-center" ng-click="$toggleMode()">
+          <strong style="text-transform: capitalize;" ng-bind="title"></strong>
+        </div>
+      </th>
+      <th>
+        <div tabindex="-1" class="hov" ng-click="$selectPane(+1)">
+          <i class="{{$iconRight}}"></i>
+        </div>
+      </th>
+    </tr>
+    <tr ng-if="showLabels" ng-bind-html="labels"></tr>
+  </thead>
+  <tbody>
+    <tr   ng-repeat="(i, row) in rows" height="{{ 100 / rows.length }}%">
+      <td class="text-center" ng-repeat="(j, el) in row">
+        <div tabindex="-1"  class="day hov"  ng-class="{'btn-primary': el.selected, 'btn-info btn-today': el.isToday && !el.selected}" ng-click="$select(el.date)" ng-disabled="el.disabled">
+          <span class="spanInDay"ng-class="{'text-muted': el.muted}" ng-bind="el.label"></span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

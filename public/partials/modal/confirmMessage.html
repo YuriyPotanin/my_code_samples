@@ -1,0 +1,27 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content col-md-12 " >
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+                <span class="pull-right modal-close" ng-click="$hide()">&#10006;</span>
+             <div class="col-md-12">
+               <div class="form-group">
+                  <div claass ="row">
+                    <h3 ng-if ="typeSend" class="confirm ">Are you sure wont send message {{users.length}} users</h3>
+                    <h3 ng-if ="!typeSend" class="confirm ">Are you sure wont send message {{sendMessArr.length}} users</h3>
+                  </div>
+                  <div class="row">
+                  <button  type="submit" class="btn btn-success pull-left" id="massButton"  ng-click="cancelMessage(); $hide()"> Cancel </button>
+                  <button  type="submit" class="btn btn-success pull-right" id="massButton" ng-if ="typeSend" ng-click="sendMessageAllUsers(); $hide()"> Send message</button>
+                  <button  type="submit" class="btn btn-success pull-right" id="massButton" ng-if ="!typeSend" ng-click="sendSelectedUsers(); $hide()"> Send message </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

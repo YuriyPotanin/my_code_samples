@@ -1,0 +1,64 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content col-md-12 " >
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+                <span class="pull-right modal-close" ng-click="$hide()">&#10006;</span>
+             <div class="col-md-12">
+             <div class="col-md-6">
+               <div class="form-group">
+                  <label for="comment">Text message:</label>
+                  <textarea class="form-control" rows="8" ng-model="messageData.messageText"></textarea>
+                </div>
+             </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <label for="comment">choose email or push notification:</label>
+                  <select class="form-control" name="selectType" id="selectType" ng-model="messageData.selectType" ng-init="messageData.selectType='1'">
+                    <option value="1">email</option>
+                    <option value="2">push notification</option>
+                  </select><br>
+                </div>
+                <div class="row" ng-if="messageData.selectType == '1'">
+                  <label for="comment">add sender adress: </label>
+                  <input type="text" class="form-control" ng-model="messageData.sender" aria-controls="dynamic-table" >
+                </div>
+                <div class="row">
+                  <label for="comment" >Subject: </label>
+                  <input type="text" class="form-control" ng-model="messageData.subject" aria-controls="dynamic-table" >
+                </div>
+                <div class="row" ng-if="messageData.selectType == '1'">
+                  <label for="comment">add destination adress: </label>
+                  <input type="text" class="form-control" aria-controls="dynamic-table" >
+                </div>
+                <div class="row" ng-if="messageData.selectType == '2'">
+                  <label for="comment">add Path: </label>
+                  <input type="text" class="form-control" aria-controls="dynamic-table" ng-model="messageData.path">
+                </div>
+                <div class="row">
+                <div class="massButton">
+                  
+                </div>
+                  <button  type="submit" class="btn btn-success " id="massButton"  ng-if="typeMessage()" ng-click="showConfirm('all'); $hide();" >send all users</button>
+                  <button  type="submit" class="btn btn-success " id="massButton"  ng-if="typeMessage()" ng-click="showConfirm('efrsarfsefsefsefsef'); $hide()"> send selected users</button>
+                  <button  type="submit" class="btn btn-success " id="massButton"  ng-if="!typeMessage()" ng-click="sendMessageAllUsers(selectType); $hide();" >send all users</button>
+                  <button  type="submit" class="btn btn-success " id="massButton"  ng-if="!typeMessage()" ng-click="sendSelectedUsers(selectType); $hide()"> send selected users</button>
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="mailContainer">
+                    <span ng-repeat="mail in sendMessArrToShow" class="mailToSend"> {{mail.user_email}}</span>
+                    
+                  </div>
+                </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

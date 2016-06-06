@@ -1,0 +1,353 @@
+<section id="main-content" >
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-sm-12 ">
+				<section class="panel">
+					<header class="panel-heading">
+							<h1>{{task.title}} </h1>
+						<span class="tools pull-right">
+							<button ng-click="back()" type="submit" class="btn btn-success pull-right">back</button>
+						</span>
+					</header>
+					<div class="panel-body ">
+	                 <div calss="row">
+	                 	<aside class="col-md-12">
+	                 		<div class="row">
+	                 		<ul class="grid cs-style-3" ng-repeat="img in task.img">
+	                 			<li>
+	                 				<figure >
+	                 					<img  class="imgtask" src="{{img.url}}" alt="img04">	                 					
+	                 				</figure>
+	                 			</li>
+	                 		</ul>
+	                 		</div>
+		                 	<div class="row">
+								<div class="bio-graph-heading">
+					                <h1>Task overview</h1>
+		                 		</div>
+				            </div>
+				                <div class="panel-body bio-graph-info">
+             						<div class="row">
+             							<div class=" col-sm-6">
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Category</label>
+													<input type="text" class="form-control" ng-model="task.category" bs-options="name for name in availableCategories" bs-typeahead="" autocomplete="on">
+
+												</div>
+	                 						</div>
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Description</label>
+													<textarea  type="text" rows="3" class="form-control" ng-model="task.description"></textarea>
+												</div>
+	                 						</div>
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Currency</label>
+													<input type="text" class="form-control" ng-model="task.currency">
+												</div>
+	                 						</div>
+
+
+
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Duration</label>
+													<input type="text" class="form-control" ng-model="task.duration">
+												</div>
+	                 						</div>
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Is deleted?</label>
+													<input type="checkbox" class="pull-right"ng-model="task.isDeleted">
+												</div>
+	                 						</div>
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Outsourced</label>
+													<input type="checkbox" class="pull-right" ng-model="task.outsourced">
+												</div>
+	                 						</div>
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Type</label>
+													<select class ="form-control"name="status" ng-model="task.type">
+                                						<option value="offer">Offer</option>
+                                						<option value="outsource">Outsource</option>
+                                					</select>
+												</div>
+	                 						</div>
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Tags</label>
+													<input type="text" class="form-control" ng-model="task.tags">
+												</div>
+	                 						</div>
+         	        						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Title</label>
+													<input type="text" class="form-control" ng-model="task.title">
+												</div>
+	                 						</div>
+             							</div>
+             							<div class="col-sm-6">
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Status</label>
+													<select class ="form-control "name="status" ng-model="task.status" >
+						                                <option value="open">Open</option>
+						                                <option value="canceled">Canceled</option>
+						                                <option value="inprogress">Inprogress</option>
+						                                <option value="recurring">Recurring</option>
+						                                <option value="paid">Paid</option>
+						                                <option value="closed">Closed</option>
+						                                <option value="suspended">Suspended</option>
+						                                <option value="approved">Approved</option>
+						                                <option value="complete">complete</option>
+						                              </select><br ng-if ="!task.isEdit">
+
+												</div>
+	                 						</div>
+	                 						<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Amount</label>
+													<input type="text" class="form-control" ng-model="task.amount">
+												</div>
+	                 						</div>
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Posted by</label>
+													 <input type="text" class="form-control" ng-model="task.postedBy" bs-options="email for email in postedByArr" bs-typeahead autocomplete="on">
+												</div>
+	                 						</div>
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Purchase type</label>
+													<input type="text" class="form-control" ng-model="task.purchaseType" bs-options="typ for typ in purchaseTypes" bs-typeahead="" autocomplete="on">
+												</div>
+	                 						</div>
+
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Start date type</label>
+													<input type="text" class="form-control" ng-model="task.startDateType">
+												</div>
+	                 						</div>
+
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Status changed by</label>
+													<input type="text" class="form-control" ng-model="task.statusChangedBy">
+												</div>
+	                 						</div>
+	                 						<div class='col-sm-12'>
+	                 							<div class="form-group">
+													<label>Status changed by name</label>
+													<input type="text" class="form-control" ng-model="task.statusChangedByName">
+												</div>
+  		               						</div>
+             							</div>
+            						</div>
+				                </div>  <!-- end  Task overview -->
+		                 	<div class="row">
+								<div class="bio-graph-heading">
+					                <h1>Who?</h1>
+		                 		</div>
+				            </div>
+				                <div class="panel-body bio-graph-info">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Assignee Id</label>
+													<input type="text" class="form-control" ng-model="task.assigneeId" bs-options="id for id in assigneeIdArr" bs-typeahead autocomplete="on">
+												</div>
+	                 						</div>
+										</div>
+									</div>
+								</div> <!-- end  Task overview -->
+		                 	<div class="row">
+								<div class="bio-graph-heading">
+					                <h1>Date</h1>
+		                 		</div>
+				            </div>
+				                <div class="panel-body bio-graph-info">
+									<div class="row">
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Assigned Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.assignedDate" 
+															name="date"
+															template = "partials/template/DatePicker.html"
+															
+															
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Deleted Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.deletedDate" 
+															name="date"
+															template = "partials/template/DatePicker.html" 
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Due Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.dueDate" 
+															name="date"
+															template = "partials/template/DatePicker.html" 
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Outsourced Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.outsourcedDate" 
+															name="date"
+															template = "partials/template/DatePicker.html" 
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Posted Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.postedDate" 
+															name="date"
+															template = "partials/template/DatePicker.html" 
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Start Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.startDate" 
+															name="date"
+															template = "partials/template/DatePicker.html" 
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+										<div class="col-sm-3">
+											<div class = "col-sm-12">
+				        						<div class="form-group">
+													<label>Status changed Date</label>
+													<input type="text" 
+															class="form-control"
+															ng-model="task.statusChangedDate" 
+															name="date"
+															template = "dp" 
+															bs-datepicker>
+												</div>
+	                 						</div>
+										</div>
+									</div>
+								</div> <!-- end  Task overview -->
+		                 	<div class="row">
+								<div class="bio-graph-heading">
+					                <h1>Files</h1>
+		                 		</div>
+				            </div>
+				                <div class="panel-body bio-graph-info">
+									<div class="row">
+										<div class="col-sm-3" ng-repeat="file in task.files">
+											<label>File  {{$index + 1}}</label>
+												<div class="col-sm-11 col-sm-offset-1">
+																<div class="form-group">
+																	<label>Name</label>
+																	<input type="text" class="form-control" ng-model="file.name">
+																</div>
+																<div class="form-group">
+																	<label>Path</label>
+																	<input type="text" class="form-control" ng-model="file.path">
+																</div>
+																<div class="form-group">
+																	<label>Size</label>
+																	<input type="text" class="form-control" ng-model="file.size">
+																</div>
+																<div class="form-group">
+																	<label>Type</label>
+																	<input type="text" class="form-control" ng-model="file.type">
+																</div>
+															</div>
+											
+										</div>
+									</div>
+								</div>
+
+		                 		<div class="row">
+		                 			<button class="btn btn-danger pull-right" ng-click="submitTask()">Submit</button>
+		                 		</div>
+		                 		<div class="row">
+				                      		
+				                          <div class="bio-graph-heading">
+				                              <h1>Task Offers</h1>
+				                          </div>
+				                          <table class="table table-striped">
+				                              <thead>
+				                              <tr>
+				                                  <th>Price</th>
+				                                  <th>Posted date</th>
+				                                  <th>Comment</th>
+				                                  <th>From user</th>
+				                                  <th>Is accept?</th>
+				                              </tr>
+				                              </thead>
+				                              <tbody>
+				                              {{message}}
+				                              <tr ng-repeat="offer in tasksOffers track by $index">
+				                                  <td>{{offer.price}}</td>
+				                                  <td>{{offer.postedDate  | date:"MM/dd/yyyy 'at' h:mma"}}</td>
+				                                  <td>{{offer.comment}}</td>
+				                                  <td>{{offer.userId}}</td>
+				                                  <td>{{offer.isAccept}}</td>
+				                              </tr>
+				                              </tbody>
+				                          </table>
+				                      	</div>
+	                      	</section>
+
+	                 	</aside>
+	                </div>	
+				</div>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>
+
+
+
+<script class="include" type="text/javascript" src="theme_js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="theme_js/jquery.scrollTo.min.js"></script>
+<script src="theme_js/jquery.nicescroll.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript" src="theme_assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="theme_assets/data-tables/DT_bootstrap.js"></script>
+<script src="theme_js/respond.min.js" ></script>
+ <script src="theme_js/slidebars.min.js"></script>
